@@ -1,0 +1,575 @@
+/* ==========================================================================
+   Global Variables & Theme Design System
+   ========================================================================== */
+:root {
+  --primary-color: #6F4E37;      /* Coffee Warm Brown */
+  --primary-hover: #543B29;
+  --accent-color: #D4A373;       /* Warm Latte Accent */
+  --khqr-red: #E61B23;            /* Bakong / KHQR Red */
+  --bg-color: #F8F9FA;
+  --card-bg: #FFFFFF;
+  --text-primary: #2B2D42;
+  --text-muted: #6C757D;
+  --border-color: #E9ECEF;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif, 'Battambang', 'Kantumruy Pro';
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8%;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.Why h2 {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.container-link {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.container-link a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.container-link a:hover {
+  color: var(--primary-color);
+}
+
+.cart-bag {
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-bag:hover {
+  background: var(--primary-hover);
+}
+
+#cart-count {
+  background: var(--khqr-red);
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Page Headers & Hero Layout
+   ========================================================================== */
+.page {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  background: linear-gradient(135deg, #6F4E37 0%, #D4A373 100%);
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.page h1, .page h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 5%;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-text .btn-primary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.hero-text .btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.hero-img {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img img {
+  width: 0%;
+  max-width: 1550px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+}
+
+
+/* ==========================================================================
+   About Section Styling
+   ========================================================================== */
+.about-content {
+  max-width: 700px;
+  margin: 2rem auto 4rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.about-content h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+
+/* ==========================================================================
+   Fixed Shop & Product Grid
+   ========================================================================== */
+.shop {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 0 8% 4rem 8%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Container Fixes */
+.product-card, .product-cart {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 1.5rem 0;
+  border: 1px solid var(--border-color);
+  height: 100%; /* Ensures uniform heights across rows */
+}
+
+/* Card Hover Elevation */
+.product-card:hover, .product-cart:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(111, 78, 55, 0.2);
+}
+
+/* Product Image Fixes */
+.product-card img, .product-cart img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Prevents stretched image distortion */
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Title Styling */
+.product-card h3, .product-cart h3 {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.2rem 0;
+  color: var(--text-primary);
+  font-weight: 700;
+  padding: 0 1rem;
+}
+
+/* Price Tag Styling */
+.product-card p, .product-cart p {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Button Fixed to Bottom */
+.product-card button, .product-cart button {
+  margin-top: auto; /* Aligns button neatly to card bottom */
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 80%; /* Consistent button width */
+}
+
+.product-card button:hover, .product-cart button:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(111, 78, 55, 0.25);
+}
+
+/* ==========================================================================
+   Responsive Mobile Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+  }
+
+  .container-link {
+    gap: 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .shop {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.2rem;
+    padding: 0 5% 3rem 5%;
+  }
+
+  .product-card img, .product-cart img {
+    height: 140px;
+  }
+
+  .product-card h3, .product-cart h3 {
+    font-size: 1.05rem;
+  }
+
+  .product-card button, .product-cart button {
+    width: 90%;
+    padding: 0.55rem 1rem;
+  }
+}
+
+/* ==========================================================================
+   KHQR & Cart Modal Styling
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.khqr-card {
+  background: #FFFFFF;
+  width: 360px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.active .khqr-card {
+  transform: scale(1);
+}
+
+.khqr-header {
+  background-color: var(--khqr-red);
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 10px 10px 0 0;
+  margin: -1.5rem -1.5rem 1.2rem -1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.khqr-qr-box {
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 0.8rem;
+  background: #FFF;
+  margin-bottom: 1rem;
+}
+
+.khqr-qr-box img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.khqr-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--khqr-red);
+  margin: 0.5rem 0;
+}
+
+.close-modal-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background: var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.close-modal-btn:hover {
+  background: #DCE1E5;
+}
+
+/* ==========================================================================
+   Responsive Layout (Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+  }
+
+  .container-link {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .shop {
+    padding: 0 5% 3rem 5%;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Contact Form Styling
+   ========================================================================== */
+.contact-form {
+  max-width: 480px;
+  margin: 2rem auto 4rem auto;
+  padding: 2.5rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.contact-form input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.contact-form input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(111, 78, 55, 0.15);
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.85rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contact-form button:hover {
+  background: var(--primary-hover);
+}
+
+/* ==========================================================================
+   KHQR Modal Styling
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.khqr-card {
+  background: #FFFFFF;
+  width: 360px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .khqr-card {
+  transform: scale(1);
+}
+
+.khqr-header {
+  background-color: var(--khqr-red);
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 10px 10px 0 0;
+  margin: -1.5rem -1.5rem 1.2rem -1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.khqr-qr-box {
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 0.8rem;
+  background: #FFF;
+  margin-bottom: 1rem;
+}
+
+.khqr-qr-box img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.khqr-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--khqr-red);
+  margin: 0.5rem 0;
+}
+
+.close-modal-btn {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.close-modal-btn:hover {
+  opacity: 0.9;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
